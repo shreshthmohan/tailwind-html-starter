@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "navill";
+  src: url("fonts/navill-bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "navill";
+  src: url("fonts/naville-regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
 /* .prose code {
   @apply rounded-md bg-gray-400/20 px-1 dark:bg-gray-500/40;
 }

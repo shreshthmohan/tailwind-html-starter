@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="stylesheet" href="output.css" />
+    <title>Document</title>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+  </head>
+  <body>
+    <div class="m-16">
+      <!-- a div of size for instagram post -->
+      <div
+        id="instagram-post"
+        class="relative w-[1080px] h-[1080px] bg-gray-100 flex items-center justify-center overflow-hidden"
+      >
+        <!-- map in hand image -->
+        <!-- centered and expanded to fill the div -->
+        <!-- overflow hidden to prevent image from exceeding div boundaries -->
+        <img
+          src="images/map-on-the-ground.jpg"
+          alt="Map in hand"
+          class="object-cover w-full h-full"
+        />
+        <p
+          class="drop-shadow-lg absolute top-20 leading-tight text-center w-full text-[5rem] text-white font-navill font-bold"
+        >
+          Off-Grid <br />
+          Navigation
+          <br />
+        </p>
+
+        <!-- black gradient under the bottom text -->
+        <div
+          class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black/70 to-transparent"
+        ></div>
+
+        <div class="absolute bottom-0 left-[50%] w-full translate-x-[-50%]">
+          <p
+            class="drop-shadow-lg pb-4 text-center text-[2rem] text-white font-navill font-bold"
+          >
+            a workshop by
+          </p>
+
+          <div
+            class="flex px-16 items-center pb-16 justify-between mx-auto w-[65%]"
+          >
+            <div class="text-[2rem] text-white font-navill font-bold h-16">
+              blrhikes.com
+            </div>
+            <div
+              class="px-4 text-[1.5rem] text-white font-navill font-bold h-16 pt-1"
+            >
+              &
+            </div>
+            <img
+              src="images/logo-long-white.png"
+              alt="Instagram"
+              class="h-20 pb-5"
+            />
+          </div>
+        </div>
+
+        <!-- instagram logo -->
+      </div>
+
+      <!-- Add download button after the instagram-post div -->
+      <button
+        id="downloadBtn"
+        class="mt-4 px-4 py-2 bg-blue-500 text-white rounded"
+      >
+        Download Image
+      </button>
+    </div>
+
+    <script>
+      document
+        .getElementById("downloadBtn")
+        .addEventListener("click", function () {
+          html2canvas(document.getElementById("instagram-post")).then(function (
+            canvas
+          ) {
+            var link = document.createElement("a");
+            link.download = "instagram-post.png";
+            link.href = canvas.toDataURL();
+            link.click();
+          });
+        });
+    </script>
+  </body>
+</html>

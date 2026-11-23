@@ -5,6 +5,9 @@ module.exports = {
     extend: {
       // TODO: the idea now is that you add an object with such keys below
       // to override the default (and dark) theme for code blocks
+      fontFamily: {
+        navill: ["navill", "sans-serif"],
+      },
 
       typography: ({ theme }) => ({
         DEFAULT: {
